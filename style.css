@@ -1,0 +1,168 @@
+* {
+  box-sizing:border-box;
+  }
+
+body {
+margin:0;
+background:#07111f;
+color:white;
+font-family:Arial,sans-serif;
+}
+
+header {
+text-align:center;
+background:#101f36;
+padding:22px;
+border-bottom:3px solid #00e6a0;
+}
+
+header h2 {
+margin:0;
+font-size:25px;
+}
+
+header span {
+color:#00e6a0;
+}
+
+header small {
+color:#00e6a0;
+}
+
+nav {
+display:flex;
+justify-content:center;
+gap:5px;
+background:#14253c;
+padding:12px;
+position:sticky;
+top:0;
+z-index:5;
+}
+
+button {
+background:#00dba0;
+color:#07111f;
+border:0;
+border-radius:9px;
+padding:13px;
+margin:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+nav button {
+background:#263b57;
+color:white;
+}
+
+main {
+max-width:700px;
+margin:auto;
+padding:14px;
+}
+
+.panel,.scoreboard {
+background:#142740;
+padding:20px;
+border-radius:16px;
+margin-bottom:18px;
+box-shadow:0 5px 20px #0005;
+}
+
+.panel h2 {
+color:#00e6a0;
+}
+
+input,select {
+width:100%;
+padding:14px;
+margin:7px 0;
+border-radius:9px;
+border:1px solid #38516d;
+background:#08192c;
+color:white;
+font-size:15px;
+}
+
+.primary {
+width:100%;
+margin-top:12px;
+}
+
+.scoreboard {
+text-align:center;
+background:linear-gradient(145deg,#173c64,#07172b);
+border:1px solid #00dba0;
+}
+
+.live {
+color:#00e6a0;
+font-weight:bold;
+}
+
+.score {
+color:#00e6a0;
+font-size:65px;
+font-weight:bold;
+margin:15px;
+}
+
+.scoreboard p {
+color:#c5d6e8;
+}
+
+.grid {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+
+.grid button {
+margin:0;
+font-size:21px;
+padding:17px;
+}
+
+.danger {
+background:#ed405b;
+color:white;
+}
+
+.hidden {
+display:none;
+}
+
+#history {
+max-height:250px;
+overflow:auto;
+line-height:2;
+}
+
+table {
+width:100%;
+border-collapse:collapse;
+font-size:13px;
+}
+
+td,th {
+padding:10px 5px;
+text-align:center;
+border-bottom:1px solid #38516d;
+}
+
+th {
+color:#00e6a0;
+}
+
+footer {
+text-align:center;
+padding:20px;
+color:#8295ad;
+}
+
+@media(max-width:400px) {
+.score {
+font-size:52px;
+}
+}
