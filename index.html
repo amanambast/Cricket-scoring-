@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cricket Scorer Pro V4</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body><header>
+ <h2>🏏 CRICKET <span>PRO</span></h2>
+ <small>IPL PROFESSIONAL EDITION V4.0</small>
+</header><nav>
+ <button onclick="showTab('home')">HOME</button>
+ <button onclick="showTab('scorecard')">SCORECARD</button>
+ <button onclick="showTab('tournament')">TOURNAMENT</button>
+</nav><main><section id="home" class="tab"><div class="panel">
+<h2>⚙️ MATCH SETUP</h2><input id="team1" placeholder="Team A Name">
+<input id="team2" placeholder="Team B Name"><input id="players1" placeholder="Team A Players (comma separated)">
+<input id="players2" placeholder="Team B Players (comma separated)"><input id="oversLimit" type="number" value="20" min="1"><select id="tossWinner">
+<option value="A">Team A won toss</option>
+<option value="B">Team B won toss</option>
+</select><select id="tossDecision">
+<option value="bat">Bat first</option>
+<option value="bowl">Bowl first</option>
+</select><button class="primary" onclick="startMatch()">START MATCH</button>
+<button onclick="resumeMatch()">RESUME SAVED MATCH</button>
+
+</div><div class="scoreboard">
+<div class="live">● LIVE SCORE</div>
+<h2 id="battingTeam">TEAM A</h2>
+<div class="score">
+<span id="runs">0</span>/<span id="wickets">0</span>
+</div>
+<p>OVERS: <b id="overs">0.0</b></p>
+<p>CRR: <b id="crr">0.00</b></p>
+<p>RRR: <b id="rrr">-</b></p>
+<p>TARGET: <b id="target">-</b></p>
+<p id="matchStatus">Waiting for match</p>
+</div><div class="panel">
+<h2>⚡ LIVE SCORING</h2>
+<div class="grid">
+<button onclick="addRun(0)">0</button>
+<button onclick="addRun(1)">1</button>
+<button onclick="addRun(2)">2</button>
+<button onclick="addRun(3)">3</button>
+<button onclick="addRun(4)">4</button>
+<button onclick="addRun(6)">6</button>
+</div><h3>EXTRAS</h3>
+<div class="grid">
+<button onclick="addExtra('WD')">WIDE</button>
+<button onclick="addExtra('NB')">NO BALL</button>
+<button onclick="addExtra('BYE')">BYE</button>
+<button onclick="addExtra('LB')">LEG BYE</button>
+</div><button class="danger" onclick="addWicket()">WICKET</button>
+<button onclick="undo()">↩ UNDO</button>
+<button onclick="endInnings()">END INNINGS</button>
+
+</div><div class="panel">
+<h2>📋 COMMENTARY</h2>
+<div id="history">No balls played.</div>
+</div><div class="panel">
+<h2>🏆 MATCH RESULT</h2>
+<h3 id="result">Match not started</h3>
+</div></section><section id="scorecard" class="tab hidden">
+<div class="panel">
+<h2>🏏 BATSMAN SCORECARD</h2>
+<div id="battingCard"></div>
+<h2>🎯 BOWLING SCORECARD</h2>
+<div id="bowlingCard"></div>
+</div>
+<button onclick="downloadPDF()">DOWNLOAD PDF</button>
+<button onclick="shareScore()">SHARE SCORE</button>
+</section><section id="tournament" class="tab hidden">
+<div class="panel">
+<h2>🏆 IPL TOURNAMENT</h2>
+<input id="tournamentName" placeholder="Tournament Name">
+<button onclick="createTournament()">CREATE TOURNAMENT</button>
+<div id="tournamentInfo"></div>
+</div><div class="panel">
+<h2>📊 POINTS TABLE</h2>
+<table>
+<thead>
+<tr><th>TEAM</th><th>PLAYED</th><th>WON</th><th>LOST</th><th>PTS</th></tr>
+</thead>
+<tbody id="pointsTable"></tbody>
+</table>
+</div>
+</section></main><footer>CRICKET SCORER PRO © 2026</footer><script src="script.js"></script></body>
+</html>
